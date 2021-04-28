@@ -1,11 +1,21 @@
-﻿<!DOCTYPE html>
+﻿<?php
+// Initialize the session
+session_start();
+// Check if the user is logged in, if not then redirect him to login page
+if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
+    header("location: login.php");
+    exit;
+}
+?>
+
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
     
-    <title>Preclinic - Medical & Hospital - Bootstrap 4 Admin Template</title>
+    <title>Shine Locally</title>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="assets/css/font-awesome.min.css">
@@ -21,7 +31,7 @@
         <div class="header">
             <div class="header-left">
                 <a href="index.php" class="logo">
-                    <img src="assets/img/logo.png" width="35" height="35" alt=""> <span>Preclinic</span>
+                    <img src="assets/img/logo.png" width="35" height="35" alt=""> <span>Shine Locally</span>
                 </a>
             </div>
             <a id="mobile_btn" class="mobile_btn float-left" href="#sidebar"><i class="fa fa-bars"></i></a>
@@ -35,83 +45,38 @@
                         <div class="drop-scroll">
                             <ul class="notification-list">
                                 <li class="notification-message">
-                                    <a href="activities.php">
+                                    <a href="#">
                                         <div class="media">
 											<span class="avatar">
-												<img alt="John Doe" src="assets/img/user.jpg" class="img-fluid">
+												<img alt="Asim Farooq" src="assets/img/user.jpg" class="img-fluid">
 											</span>
 											<div class="media-body">
-												<p class="noti-details"><span class="noti-title">John Doe</span> added new task <span class="noti-title">Patient appointment booking</span></p>
-												<p class="noti-time"><span class="notification-time">4 mins ago</span></p>
+                                            <p class="noti-details"><span class="noti-title">You</span> missed a call from <span class="noti-title">Asim Farooq</span></p>
+											<p class="noti-time"><span class="notification-time">4 mins ago</span></p>
 											</div>
                                         </div>
                                     </a>
                                 </li>
-                                <li class="notification-message">
-                                    <a href="activities.php">
-                                        <div class="media">
-											<span class="avatar">V</span>
-											<div class="media-body">
-												<p class="noti-details"><span class="noti-title">Tarah Shropshire</span> changed the task name <span class="noti-title">Appointment booking with payment gateway</span></p>
-												<p class="noti-time"><span class="notification-time">6 mins ago</span></p>
-											</div>
-                                        </div>
-                                    </a>
-                                </li>
-                                <li class="notification-message">
-                                    <a href="activities.php">
-                                        <div class="media">
-											<span class="avatar">L</span>
-											<div class="media-body">
-												<p class="noti-details"><span class="noti-title">Misty Tison</span> added <span class="noti-title">Domenic Houston</span> and <span class="noti-title">Claire Mapes</span> to project <span class="noti-title">Doctor available module</span></p>
-												<p class="noti-time"><span class="notification-time">8 mins ago</span></p>
-											</div>
-                                        </div>
-                                    </a>
-                                </li>
-                                <li class="notification-message">
-                                    <a href="activities.php">
-                                        <div class="media">
-											<span class="avatar">G</span>
-											<div class="media-body">
-												<p class="noti-details"><span class="noti-title">Rolland Webber</span> completed task <span class="noti-title">Patient and Doctor video conferencing</span></p>
-												<p class="noti-time"><span class="notification-time">12 mins ago</span></p>
-											</div>
-                                        </div>
-                                    </a>
-                                </li>
-                                <li class="notification-message">
-                                    <a href="activities.php">
-                                        <div class="media">
-											<span class="avatar">V</span>
-											<div class="media-body">
-												<p class="noti-details"><span class="noti-title">Bernardo Galaviz</span> added new task <span class="noti-title">Private chat module</span></p>
-												<p class="noti-time"><span class="notification-time">2 days ago</span></p>
-											</div>
-                                        </div>
-                                    </a>
-                                </li>
+                               
                             </ul>
                         </div>
                         <div class="topnav-dropdown-footer">
-                            <a href="activities.php">View all Notifications</a>
+                            <a href="#">View all Notifications</a>
                         </div>
                     </div>
                 </li>
                 <li class="nav-item dropdown d-none d-sm-block">
-                    <a href="javascript:void(0);" id="open_msg_box" class="hasnotifications nav-link"><i class="fa fa-comment-o"></i> <span class="badge badge-pill bg-danger float-right">8</span></a>
+                    <a href="javascript:void(0);" id="open_msg_box" class="hasnotifications nav-link"><i class="fa fa-comment-o"></i> <span class="badge badge-pill bg-danger float-right">0</span></a>
                 </li>
                 <li class="nav-item dropdown has-arrow">
                     <a href="#" class="dropdown-toggle nav-link user-link" data-toggle="dropdown">
                         <span class="user-img"><img class="rounded-circle" src="assets/img/user.jpg" width="40" alt="Admin">
 							<span class="status online"></span></span>
-                        <span>Admin</span>
+                     <?php echo htmlspecialchars($_SESSION["username"]); ?>
                     </a>
 					<div class="dropdown-menu">
 						<a class="dropdown-item" href="profile.php">My Profile</a>
-						<a class="dropdown-item" href="edit-profile.php">Edit Profile</a>
-						<a class="dropdown-item" href="settings.php">Settings</a>
-						<a class="dropdown-item" href="login.php">Logout</a>
+						<a class="dropdown-item" href="logout.php">Logout</a>
 					</div>
                 </li>
             </ul>
@@ -119,9 +84,8 @@
                 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="fa fa-ellipsis-v"></i></a>
                 <div class="dropdown-menu dropdown-menu-right">
                     <a class="dropdown-item" href="profile.php">My Profile</a>
-                    <a class="dropdown-item" href="edit-profile.php">Edit Profile</a>
-                    <a class="dropdown-item" href="settings.php">Settings</a>
-                    <a class="dropdown-item" href="login.php">Logout</a>
+            
+                    <a class="dropdown-item" href="logout.php">Logout</a>
                 </div>
             </div>
         </div>
@@ -132,31 +96,18 @@
                         <li>
                             <a href="index.php"><i class="fa fa-home back-icon"></i> <span>Back to Home</span></a>
                         </li>
-                        <li class="menu-title">Chat Groups <a href="#" class="add-user-icon" data-toggle="modal" data-target="#add_group"><i class="fa fa-plus"></i></a></li>
-                        <li>
-                            <a href="chat.php">#General</a>
-                        </li>
-                        <li>
-                            <a href="chat.php">#Video Responsive Survey</a>
-                        </li>
-                        <li>
-                            <a href="chat.php">#500rs</a>
-                        </li>
-                        <li>
-                            <a href="chat.php">#warehouse</a>
-                        </li>
                         <li class="menu-title">Direct Chats <a href="#" class="add-user-icon" data-toggle="modal" data-target="#add_chat_user"><i class="fa fa-plus"></i></a></li>
                         <li>
-                            <a href="chat.php"><span class="chat-avatar-sm user-img"><img src="assets/img/user.jpg" alt="" class="rounded-circle"><span class="status online"></span></span> John Doe <span class="badge badge-pill bg-danger float-right">1</span></a>
+                            <a href="chat.php"><span class="chat-avatar-sm user-img"><img src="assets/img/user.jpg" alt="" class="rounded-circle"><span class="status online"></span></span> Asim Farooq <span class="badge badge-pill bg-danger float-right">1</span></a>
                         </li>
                         <li>
-                            <a href="chat.php"><span class="chat-avatar-sm user-img"><img src="assets/img/user.jpg" alt="" class="rounded-circle"><span class="status offline"></span></span> Richard Miles <span class="badge badge-pill bg-danger float-right">18</span></a>
+                            <a href="chat.php"><span class="chat-avatar-sm user-img"><img src="assets/img/user.jpg" alt="" class="rounded-circle"><span class="status offline"></span></span> Siraj Munir <span class="badge badge-pill bg-danger float-right">18</span></a>
                         </li>
                         <li>
-                            <a href="chat.php"><span class="chat-avatar-sm user-img"><img src="assets/img/user.jpg" alt="" class="rounded-circle"><span class="status away"></span></span> John Smith</a>
+                            <a href="chat.php"><span class="chat-avatar-sm user-img"><img src="assets/img/user.jpg" alt="" class="rounded-circle"><span class="status away"></span></span> Anns Ali</a>
                         </li>
                         <li class="active">
-                            <a href="chat.php"><span class="chat-avatar-sm user-img"><img src="assets/img/user.jpg" alt="" class="rounded-circle"><span class="status online"></span></span> Mike Litorus <span class="badge badge-pill bg-danger float-right">108</span></a>
+                            <a href="chat.php"><span class="chat-avatar-sm user-img"><img src="assets/img/user.jpg" alt="" class="rounded-circle"><span class="status online"></span></span> Asad Bin Khalid <span class="badge badge-pill bg-danger float-right">50</span></a>
                         </li>
                     </ul>
                 </div>
@@ -171,10 +122,10 @@
 								<div class="navbar">
                                     <div class="user-details mr-auto">
                                         <div class="float-left user-img m-r-10">
-                                            <a href="profile.php" title="Mike Litorus"><img src="assets/img/user.jpg" alt="" class="w-40 rounded-circle"><span class="status online"></span></a>
+                                            <a href="profile.php" title="Asad Bin Khalid"><img src="assets/img/user.jpg" alt="" class="w-40 rounded-circle"><span class="status online"></span></a>
                                         </div>
                                         <div class="user-info float-left">
-                                            <a href="profile.php" title="Mike Litorus"><span class="font-bold">Mike Litorus</span></a>
+                                            <a href="profile.php" title="Asad Bin Khalid"><span class="font-bold">Asad Bin Khalid</span></a>
                                             <span class="last-seen">Online</span>
                                         </div>
                                     </div>
@@ -194,12 +145,14 @@
                             <div class="chat-contents">
                                 <div class="chat-content-wrap">
                                     <div class="user-video">
-                                        <img src="assets/img/video-call.jpg" alt="">
+                                            <img src="assets/img/ResizedImages/user.jpg" alt="">
                                     </div>
                                     <div class="my-video">
                                         <ul>
                                             <li>
-                                                <img src="assets/img/user-02.jpg" class="img-fluid" alt="">
+                                                <video autoplay="true" id="videoElement2">
+                                            
+                                                </video>
                                             </li>
                                         </ul>
                                     </div>
@@ -207,7 +160,7 @@
                             </div>
                             <div class="chat-footer">
                                 <div class="call-icons">
-                                    <span class="call-duration">00:59</span>
+                                    <span class="call-duration"></span>
                                     <ul class="call-items">
                                         <li class="call-item">
                                             <a href="" title="Enable Video" data-placement="top" data-toggle="tooltip">
@@ -231,7 +184,7 @@
                                         </li>
                                     </ul>
                                     <div class="end-call">
-                                        <a href="">
+                                        <a href="index.php">
 												End Call
 											</a>
                                     </div>
@@ -256,7 +209,7 @@
                                                 <div class="chat chat-left">
                                                     <div class="chat-avatar">
                                                         <a href="profile.php" class="avatar">
-                                                            <img alt="John Doe" src="assets/img/user.jpg" class="img-fluid rounded-circle">
+                                                            <img alt="Asim Farooq" src="assets/img/user.jpg" class="img-fluid rounded-circle">
                                                         </a>
                                                     </div>
                                                     <div class="chat-body">
@@ -267,7 +220,7 @@
                                                                     <i class="material-icons">phone_missed</i>
                                                                     <div class="call-info">
                                                                         <div class="call-user-details">
-                                                                            <span class="call-description">Jeffrey Warden missed the call</span>
+                                                                            <span class="call-description">Asim Farooq missed the call</span>
                                                                         </div>
                                                                     </div>
                                                                 </div>
@@ -278,13 +231,13 @@
                                                 <div class="chat chat-left">
                                                     <div class="chat-avatar">
                                                         <a href="profile.php" class="avatar">
-                                                            <img alt="John Doe" src="assets/img/user.jpg" class="img-fluid rounded-circle">
+                                                            <img alt="Asim Farooq" src="assets/img/user.jpg" class="img-fluid rounded-circle">
                                                         </a>
                                                     </div>
                                                     <div class="chat-body">
                                                         <div class="chat-bubble">
                                                             <div class="chat-content">
-                                                                <span class="chat-user">John Doe</span> <span class="chat-time">8:35 am</span>
+                                                                <span class="chat-user">Asim Farooq</span> <span class="chat-time">8:35 am</span>
                                                                 <div class="call-details">
                                                                     <i class="material-icons">call_end</i>
                                                                     <div class="call-info">
@@ -302,13 +255,13 @@
                                                 <div class="chat chat-left">
                                                     <div class="chat-avatar">
                                                         <a href="profile.php" class="avatar">
-                                                            <img alt="John Doe" src="assets/img/user.jpg" class="img-fluid rounded-circle">
+                                                            <img alt="Asim Farooq" src="assets/img/user.jpg" class="img-fluid rounded-circle">
                                                         </a>
                                                     </div>
                                                     <div class="chat-body">
                                                         <div class="chat-bubble">
                                                             <div class="chat-content">
-                                                                <span class="chat-user">Richard Miles</span> <span class="chat-time">8:35 am</span>
+                                                                <span class="chat-user">Siraj Munir</span> <span class="chat-time">8:35 am</span>
                                                                 <div class="call-details">
                                                                     <i class="material-icons">phone_missed</i>
                                                                     <div class="call-info">
@@ -324,7 +277,7 @@
                                                 <div class="chat chat-left">
                                                     <div class="chat-avatar">
                                                         <a href="profile.php" class="avatar">
-                                                            <img alt="John Doe" src="assets/img/user.jpg" class="img-fluid rounded-circle">
+                                                            <img alt="Asim Farooq" src="assets/img/user.jpg" class="img-fluid rounded-circle">
                                                         </a>
                                                     </div>
                                                     <div class="chat-body">
@@ -335,7 +288,7 @@
                                                                     <i class="material-icons">ring_volume</i>
                                                                     <div class="call-info">
                                                                         <div class="call-user-details">
-                                                                            <a href="#" class="call-description call-description--linked" data-qa="call_attachment_link">Calling John Smith ...</a>
+                                                                            <a href="#" class="call-description call-description--linked" data-qa="call_attachment_link">Calling Anns Ali ...</a>
                                                                         </div>
                                                                     </div>
                                                                 </div>
@@ -357,13 +310,13 @@
                                                             <div class="chat chat-left">
                                                                 <div class="chat-avatar">
                                                                     <a href="profile.php" class="avatar">
-                                                                        <img alt="John Doe" src="assets/img/user.jpg" class="img-fluid rounded-circle">
+                                                                        <img alt="Asim Farooq" src="assets/img/user.jpg" class="img-fluid rounded-circle">
                                                                     </a>
                                                                 </div>
                                                                 <div class="chat-body">
                                                                     <div class="chat-bubble">
                                                                         <div class="chat-content">
-                                                                            <span class="chat-user">John Doe</span> <span class="chat-time">8:35 am</span>
+                                                                            <span class="chat-user">Asim Farooq</span> <span class="chat-time">8:35 am</span>
                                                                             <p>I'm just looking around.</p>
                                                                             <p>Will you tell me something about yourself? </p>
                                                                         </div>
@@ -373,13 +326,13 @@
                                                             <div class="chat chat-left">
                                                                 <div class="chat-avatar">
                                                                     <a href="profile.php" class="avatar">
-                                                                        <img alt="John Doe" src="assets/img/user.jpg" class="img-fluid rounded-circle">
+                                                                        <img alt="Asim Farooq" src="assets/img/user.jpg" class="img-fluid rounded-circle">
                                                                     </a>
                                                                 </div>
                                                                 <div class="chat-body">
                                                                     <div class="chat-bubble">
                                                                         <div class="chat-content">
-                                                                            <span class="chat-user">John Doe</span> <span class="file-attached">attached 3 files <i class="fa fa-paperclip"></i></span> <span class="chat-time">Dec 17, 2014 at 4:32am</span>
+                                                                            <span class="chat-user">Asim Farooq</span> <span class="file-attached">attached 3 files <i class="fa fa-paperclip"></i></span> <span class="chat-time">Dec 17, 2014 at 4:32am</span>
                                                                             <ul class="attach-list">
                                                                                 <li><i class="fa fa-file"></i> <a href="#">project_document.avi</a></li>
                                                                                 <li><i class="fa fa-file"></i> <a href="#">video_conferencing.psd</a></li>
@@ -395,13 +348,13 @@
                                                             <div class="chat chat-left">
                                                                 <div class="chat-avatar">
                                                                     <a href="profile.php" class="avatar">
-                                                                        <img alt="Jeffery Lalor" src="assets/img/user.jpg" class="img-fluid rounded-circle">
+                                                                        <img alt="Siraj Munir" src="assets/img/user.jpg" class="img-fluid rounded-circle">
                                                                     </a>
                                                                 </div>
                                                                 <div class="chat-body">
                                                                     <div class="chat-bubble">
                                                                         <div class="chat-content">
-                                                                            <span class="chat-user">Jeffery Lalor</span> <span class="file-attached">attached file <i class="fa fa-paperclip"></i></span> <span class="chat-time">Yesterday at 9:16pm</span>
+                                                                            <span class="chat-user">Siraj Munir</span> <span class="file-attached">attached file <i class="fa fa-paperclip"></i></span> <span class="chat-time">Yesterday at 9:16pm</span>
                                                                             <ul class="attach-list">
                                                                                 <li class="pdf-file"><i class="fa fa-file-pdf-o"></i> <a href="#">Document_2016.pdf</a></li>
                                                                             </ul>
@@ -412,13 +365,13 @@
                                                             <div class="chat chat-left">
                                                                 <div class="chat-avatar">
                                                                     <a href="profile.php" class="avatar">
-                                                                        <img alt="Jeffery Lalor" src="assets/img/user.jpg" class="img-fluid rounded-circle">
+                                                                        <img alt="Siraj Munir" src="assets/img/user.jpg" class="img-fluid rounded-circle">
                                                                     </a>
                                                                 </div>
                                                                 <div class="chat-body">
                                                                     <div class="chat-bubble">
                                                                         <div class="chat-content">
-                                                                            <span class="chat-user">Jeffery Lalor</span> <span class="file-attached">attached file <i class="fa fa-paperclip"></i></span> <span class="chat-time">Today at 12:42pm</span>
+                                                                            <span class="chat-user">Siraj Munir</span> <span class="file-attached">attached file <i class="fa fa-paperclip"></i></span> <span class="chat-time">Today at 12:42pm</span>
                                                                             <ul class="attach-list">
                                                                                 <li class="img-file">
                                                                                     <div class="attach-img-download"><a href="#">avatar-1.jpg</a></div>
@@ -461,27 +414,27 @@
                                                             <img src="assets/img/user.jpg" alt="">
                                                             <span class="change-img">Change Image</span>
                                                         </div>
-                                                        <h3 class="user-name m-t-10 mb-0">John Doe</h3>
-                                                        <small class="text-muted">MBBS, MD</small>
-                                                        <a href="edit-profile.php" class="btn btn-primary edit-btn"><i class="fa fa-pencil"></i></a>
+                                                        <h3 class="user-name m-t-10 mb-0">Asad Bin Khalid</h3>
+                                                        <small class="text-muted">Software Engineer</small>
+                                                        <a href="#" class="btn btn-primary edit-btn"><i class="fa fa-pencil"></i></a>
                                                     </div>
                                                     <div class="chat-profile-info">
                                                         <ul class="user-det-list">
                                                             <li>
                                                                 <span>Username:</span>
-                                                                <span class="float-right text-muted">johndoe</span>
+                                                                <span class="float-right text-muted">@mak_614</span>
                                                             </li>
                                                             <li>
                                                                 <span>DOB:</span>
-                                                                <span class="float-right text-muted">24 July</span>
+                                                                <span class="float-right text-muted">20th April</span>
                                                             </li>
                                                             <li>
                                                                 <span>Email:</span>
-                                                                <span class="float-right text-muted"><a href="http://cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="59333631373d363c193c21383429353c773a3634">[email&#160;protected]</a></span>
+                                                                <span class="float-right text-muted"><a href="http://cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="4a293823393e23242b2d38253c2f390a2f322b273a262f64292527">[email&#160;protected]</a></span>
                                                             </li>
                                                             <li>
                                                                 <span>Phone:</span>
-                                                                <span class="float-right text-muted">9876543210</span>
+                                                                <span class="float-right text-muted"> 111-222-3344</span>
                                                             </li>
                                                         </ul>
                                                     </div>
@@ -524,7 +477,7 @@
                                                                             </div>
                                                                             <div class="files-info">
                                                                                 <span class="file-name text-ellipsis">AHA Selfcare Mobile Application Test-Cases.xls</span>
-                                                                                <span class="file-author"><a href="#">John Doe</a></span> <span class="file-date">May 31st at 6:53 PM</span>
+                                                                                <span class="file-author"><a href="#">Asim Farooq</a></span> <span class="file-date">May 31st at 6:53 PM</span>
                                                                             </div>
                                                                             <ul class="files-action">
                                                                                 <li class="dropdown dropdown-action">
@@ -667,7 +620,7 @@
                                             <div class="media">
 												<span class="avatar align-self-center">J</span>
 												<div class="media-body align-self-center text-nowrap">
-													<div class="user-name">Jeffery Lalor</div>
+													<div class="user-name">Siraj Munir</div>
 													<span class="designation">Team Leader</span>
 												</div>
 												<div class="text-nowrap align-self-center">
@@ -694,10 +647,10 @@
                                         <a href="#">
                                             <div class="media">
 												<span class="avatar align-self-center">
-													<img src="assets/img/user.jpg" alt="John Doe">
+													<img src="assets/img/user.jpg" alt="Asim Farooq">
 												</span>
 												<div class="media-body text-nowrap align-self-center">
-													<div class="user-name">John Doe</div>
+													<div class="user-name">Asim Farooq</div>
 													<span class="designation">MBBS, MD</span>
 												</div>
 												<div class="align-self-center text-nowrap">
@@ -753,6 +706,19 @@
     <script src="assets/js/bootstrap.min.js"></script>
     <script src="assets/js/jquery.slimscroll.js"></script>
     <script src="assets/js/app.js"></script>
+    <script>var video = document.querySelector("#videoElement2");
+
+        if (navigator.mediaDevices.getUserMedia) {
+          navigator.mediaDevices.getUserMedia({ video: true })
+            .then(function (stream) {
+              video.srcObject = stream;
+            })
+            .catch(function (err0r) {
+              console.log("Something went wrong!");
+            });
+        }
+        </script>
+        
 </body>
 
 </html>

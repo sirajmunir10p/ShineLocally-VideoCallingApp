@@ -4915,3 +4915,19 @@ blockquote p {
 		margin-bottom: 10px;
 	}
 }
+
+#container {
+	margin: 0px auto;
+	width: 600px;
+	height: 375px;
+	border: 10px #333 solid;
+}
+#videoElement {
+	width: 600px;
+	height: 375px;
+	background-color: #666;
+}
+#videoElement2 {
+	width: 120px;
+	height: 120x;
+	background-color: #666;
