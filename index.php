@@ -107,6 +107,7 @@
                         <li class="submenu">
                             <a href="#"><i class="fa fa-video-camera camera"></i> <span> Calls</span> <span class="menu-arrow"></span></a>
                             <ul style="display: none;">
+                            <li><a href="New-video-call.php">Start New Video Call</a></li>
                                 <li><a href="video-call.php">Video Call</a></li>
                             </ul>
                         </li>
@@ -149,13 +150,13 @@
 													<p>2.00 PM</p>
 												</td>
 												<td class="text-right">
-													<a href="video-call.php" class="btn btn-outline-primary take-btn">Start Meeting</a>
+													<a href="New-video-call.php" class="btn btn-outline-primary take-btn">Start Meeting</a>
 												</td>
 											</tr>
 											<tr>
 												<td style="min-width: 200px;">
-													<a class="avatar" href="profile.php">B</a>
-													<h2><a href="profile.php">Siraj, Asim, & Anns <span>Group Call</span></a></h2>
+													<a class="avatar" href="#">B</a>
+													<h2><a href="#">Siraj, Asim, & Anns <span>Group Call</span></a></h2>
 												</td>                 
 												<td>
 													<h5 class="time-title p-0">Meeting Details</h5>
@@ -166,13 +167,13 @@
 													<p>3.00 PM</p>
 												</td>
 												<td class="text-right">
-													<a href="#" class="btn btn-outline-primary take-btn">Start Meeting</a>
+													<a href="video-call.php" class="btn btn-outline-primary take-btn">Start Meeting</a>
 												</td>
 											</tr>
 											<tr>
 												<td style="min-width: 200px;">
-													<a class="avatar" href="profile.php">B</a>
-													<h2><a href="profile.php">Asim Farooq <span>Business Analyst</span></a></h2>
+													<a class="avatar" href="#">B</a>
+													<h2><a href="#">Asim Farooq <span>Business Analyst</span></a></h2>
 												</td>                 
 												<td>
 													<h5 class="time-title p-0">Meeting Details</h5>
@@ -183,13 +184,13 @@
 													<p>8.00 PM</p>
 												</td>
 												<td class="text-right">
-													<a href="#" class="btn btn-outline-primary take-btn">Start Meeting</a>
+													<a href="New-video-call.php" class="btn btn-outline-primary take-btn">Start Meeting</a>
 												</td>
 											</tr>
 											<tr>
 												<td style="min-width: 200px;">
-													<a class="avatar" href="profile.php">B</a>
-													<h2><a href="profile.php">Out Of Her Mind <span>Co-Founder</span></a></h2>
+													<a class="avatar" href="#">B</a>
+													<h2><a href="#">Out Of Her Mind <span>Co-Founder</span></a></h2>
 												</td>                 
 												<td>
 													<h5 class="time-title p-0">Meeting Details</h5>
@@ -200,7 +201,92 @@
 													<p>4.00 PM</p>
 												</td>
 												<td class="text-right">
-													<a href="#" class="btn btn-outline-primary take-btn">Start Meeting</a>
+													<a href="New-video-call.php" class="btn btn-outline-primary take-btn">Start Meeting</a>
+												</td>
+											</tr>
+                                            <tr>
+												<td style="min-width: 200px;">
+													<a class="avatar" href="#">B</a>
+													<h2><a href="#">Asim, Anns, You <span>Group Call</span></a></h2>
+												</td>                 
+												<td>
+													<h5 class="time-title p-0">Meeting Details</h5>
+													<p>Weekly Catch Up</p>
+												</td>
+												<td>
+													<h5 class="time-title p-0">Timing</h5>
+													<p>8.00 PM</p>
+												</td>
+												<td class="text-right">
+													<a href="video-call.php" class="btn btn-outline-primary take-btn">Start Meeting</a>
+												</td>
+											</tr>
+                                            <tr>
+												<td style="min-width: 200px;">
+													<a class="avatar" href="#">B</a>
+													<h2><a href="#">Siraj, Asim & Anns <span>Group Call</span></a></h2>
+												</td>                 
+												<td>
+													<h5 class="time-title p-0">Meeting Details</h5>
+													<p>Schema Discussion</p>
+												</td>
+												<td>
+													<h5 class="time-title p-0">Timing</h5>
+													<p>3.30 PM</p>
+												</td>
+												<td class="text-right">
+													<a href="video-call.php" class="btn btn-outline-primary take-btn">Start Meeting</a>
+												</td>
+											</tr>
+                                            <tr>
+												<td style="min-width: 200px;">
+													<a class="avatar" href="#">B</a>
+													<h2><a href="#">Siraj, Asim & You <span>Group Call</span></a></h2>
+												</td>                 
+												<td>
+													<h5 class="time-title p-0">Meeting Details</h5>
+													<p>ERD Discussion</p>
+												</td>
+												<td>
+													<h5 class="time-title p-0">Timing</h5>
+													<p>5.00 PM</p>
+												</td>
+												<td class="text-right">
+													<a href="video-call.php" class="btn btn-outline-primary take-btn">Start Meeting</a>
+												</td>
+											</tr>
+                                            <tr>
+												<td style="min-width: 200px;">
+													<a class="avatar" href="#">B</a>
+													<h2><a href="#">Siraj, Asim, Out of Her Mind, You <span>Group Call</span></a></h2>
+												</td>                 
+												<td>
+													<h5 class="time-title p-0">Meeting Details</h5>
+													<p>Client Call</p>
+												</td>
+												<td>
+													<h5 class="time-title p-0">Timing</h5>
+													<p>8.00 PM</p>
+												</td>
+												<td class="text-right">
+													<a href="New-video-call.php" class="btn btn-outline-primary take-btn">Start Meeting</a>
+												</td>
+											</tr>
+                                            <tr>
+												<td style="min-width: 200px;">
+													<a class="avatar" href="#">B</a>
+													<h2><a href="#">Siraj, Anns, You <span>Group Call</span></a></h2>
+												</td>                 
+												<td>
+													<h5 class="time-title p-0">Meeting Details</h5>
+													<p>Process Flow Discussion</p>
+												</td>
+												<td>
+													<h5 class="time-title p-0">Timing</h5>
+													<p>9.00 PM</p>
+												</td>
+												<td class="text-right">
+													<a href="New-video-call.php" class="btn btn-outline-primary take-btn">Start Meeting</a>
 												</td>
 											</tr>
 										</tbody>

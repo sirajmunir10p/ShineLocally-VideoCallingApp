@@ -37,7 +37,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
             <a id="mobile_btn" class="mobile_btn float-left" href="#sidebar"><i class="fa fa-bars"></i></a>
             <ul class="nav user-menu float-right">
                 <li class="nav-item dropdown d-none d-sm-block">
-                    <a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown"><i class="fa fa-bell-o"></i> <span class="badge badge-pill bg-danger float-right">3</span></a>
+                    <a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown"><i class="fa fa-bell-o"></i> <span class="badge badge-pill bg-danger float-right">1</span></a>
                     <div class="dropdown-menu notifications">
                         <div class="topnav-dropdown-header">
                             <span>Notifications</span>
@@ -45,58 +45,14 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
                         <div class="drop-scroll">
                             <ul class="notification-list">
                                 <li class="notification-message">
-                                    <a href="activities.php">
+                                    <a href="#">
                                         <div class="media">
 											<span class="avatar">
-												<img alt="John Doe" src="assets/img/user.jpg" class="img-fluid rounded-circle">
+												<img alt="John Doe" src="assets/img/user.jpg" class="img-fluid">
 											</span>
 											<div class="media-body">
-												<p class="noti-details"><span class="noti-title">John Doe</span> added new task <span class="noti-title">Patient appointment booking</span></p>
+												<p class="noti-details"><span class="noti-title">You</span> missed a call from <span class="noti-title">Asim Farooq</span></p>
 												<p class="noti-time"><span class="notification-time">4 mins ago</span></p>
-											</div>
-                                        </div>
-                                    </a>
-                                </li>
-                                <li class="notification-message">
-                                    <a href="activities.php">
-                                        <div class="media">
-											<span class="avatar">V</span>
-											<div class="media-body">
-												<p class="noti-details"><span class="noti-title">Tarah Shropshire</span> changed the task name <span class="noti-title">Appointment booking with payment gateway</span></p>
-												<p class="noti-time"><span class="notification-time">6 mins ago</span></p>
-											</div>
-                                        </div>
-                                    </a>
-                                </li>
-                                <li class="notification-message">
-                                    <a href="activities.php">
-                                        <div class="media">
-											<span class="avatar">L</span>
-											<div class="media-body">
-												<p class="noti-details"><span class="noti-title">Misty Tison</span> added <span class="noti-title">Domenic Houston</span> and <span class="noti-title">Claire Mapes</span> to project <span class="noti-title">Doctor available module</span></p>
-												<p class="noti-time"><span class="notification-time">8 mins ago</span></p>
-											</div>
-                                        </div>
-                                    </a>
-                                </li>
-                                <li class="notification-message">
-                                    <a href="activities.php">
-                                        <div class="media">
-											<span class="avatar">G</span>
-											<div class="media-body">
-												<p class="noti-details"><span class="noti-title">Rolland Webber</span> completed task <span class="noti-title">Patient and Doctor video conferencing</span></p>
-												<p class="noti-time"><span class="notification-time">12 mins ago</span></p>
-											</div>
-                                        </div>
-                                    </a>
-                                </li>
-                                <li class="notification-message">
-                                    <a href="activities.php">
-                                        <div class="media">
-											<span class="avatar">V</span>
-											<div class="media-body">
-												<p class="noti-details"><span class="noti-title">Bernardo Galaviz</span> added new task <span class="noti-title">Private chat module</span></p>
-												<p class="noti-time"><span class="notification-time">2 days ago</span></p>
 											</div>
                                         </div>
                                     </a>
@@ -104,22 +60,23 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
                             </ul>
                         </div>
                         <div class="topnav-dropdown-footer">
-                            <a href="activities.php">View all Notifications</a>
+                            <a href="#">View all Notifications</a>
                         </div>
                     </div>
                 </li>
                 <li class="nav-item dropdown d-none d-sm-block">
-                    <a href="javascript:void(0);" id="open_msg_box" class="hasnotifications nav-link"><i class="fa fa-comment-o"></i> <span class="badge badge-pill bg-danger float-right">8</span></a>
+                    <a href="javascript:void(0);" id="open_msg_box" class="hasnotifications nav-link"><i class="fa fa-comment-o"></i> <span class="badge badge-pill bg-danger float-right">0</span></a>
                 </li>
                 <li class="nav-item dropdown has-arrow">
                     <a href="#" class="dropdown-toggle nav-link user-link" data-toggle="dropdown">
-                        <span class="user-img"><img class="rounded-circle" src="assets/img/user.jpg" width="40" alt="Admin">
-							<span class="status online"></span></span>
-                            <?php echo htmlspecialchars($_SESSION["username"]); ?>
+                        <span class="user-img">
+							<img class="rounded-circle" src="assets/img/user.jpg" width="24" alt="Admin">
+							<span class="status online"></span>
+						</span>
+                        <?php echo htmlspecialchars($_SESSION["username"]); ?>
                     </a>
 					<div class="dropdown-menu">
 						<a class="dropdown-item" href="profile.php">My Profile</a>
-					
 						<a class="dropdown-item" href="logout.php">Logout</a>
 					</div>
                 </li>
@@ -140,19 +97,18 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
                         <li>
                             <a href="index.php"><i class="fa fa-home back-icon"></i> <span>Back to Home</span></a>
                         </li>
-
-                        <li class="menu-title">Direct Chats <a href="#" class="add-user-icon" data-toggle="modal" data-target="#add_chat_user"><i class="fa fa-plus"></i></a></li>
+                        <li class="menu-title">Groups <a href="#" class="add-user-icon" data-toggle="modal" data-target="#add_chat_user"><i class="fa fa-plus"></i></a></li>
                         <li>
-                            <a href="chat.php"><span class="chat-avatar-sm user-img"><img src="assets/img/ResizedImages/Asim.jpg" alt="" class="rounded-circle"><span class="status online"></span></span> Asim Farooq <span class="badge badge-pill bg-danger float-right">1</span></a>
-                        </li>
-                        <li class="active">
-                            <a href="chat.php"><span class="chat-avatar-sm user-img"><img src="assets/img/ResizedImages/Siraj.jpg" alt="" class="rounded-circle"><span class="status offline"></span></span> Siraj Munir <span class="badge badge-pill bg-danger float-right">18</span></a>
+                            <a href="chat.php"><span class="chat-avatar-sm user-img"><img src="assets/img/user.jpg" alt="" class="rounded-circle"><span class="status online"></span></span> Asim, Siraj, You <span class="badge badge-pill bg-danger float-right">1</span></a>
                         </li>
                         <li>
-                            <a href="chat.php"><span class="chat-avatar-sm user-img"><img src="assets/img/ResizedImages/Anns.jpg" alt="" class="rounded-circle"><span class="status away"></span></span> Anns Ali</a>
+                            <a href="chat.php"><span class="chat-avatar-sm user-img"><img src="assets/img/user.jpg" alt="" class="rounded-circle"><span class="status offline"></span></span> Siraj, Anns, You <span class="badge badge-pill bg-danger float-right">18</span></a>
                         </li>
                         <li>
-                            <a href="chat.php"><span class="chat-avatar-sm user-img"><img src="assets/img/user.jpg" alt="" class="rounded-circle"><span class="status online"></span></span> Out Of Her Mind <span class="badge badge-pill bg-danger float-right">108</span></a>
+                            <a href="chat.php"><span class="chat-avatar-sm user-img"><img src="assets/img/user.jpg" alt="" class="rounded-circle"><span class="status away"></span></span> Anns, Asim, Siraj, Out of Her Mind, You</a>
+                        </li>
+                        <li>
+                            <a href="chat.php"><span class="chat-avatar-sm user-img"><img src="assets/img/user.jpg" alt="" class="rounded-circle"><span class="status online"></span></span> Anns, Asim, You <span class="badge badge-pill bg-danger float-right">50</span></a>
                         </li>
                     </ul>
                 </div>
@@ -170,7 +126,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
                                             <a href="profile.php" title="Siraj Munir"><img src="assets/img/ResizedImages/Siraj.jpg" alt="" class="w-40 rounded-circle"><span class="status online"></span></a>
                                         </div>
                                         <div class="user-info float-left">
-                                            <a href="profile.php"><span class="font-bold">Siraj Munir</span> <i class="typing-text">Typing...</i></a>
+                                            <a href="profile.php"><span class="font-bold">Siraj Munir</span> <i class="typing-text"></i></a>
                                             <span class="last-seen">Last seen today at 7:50 AM</span>
                                         </div>
                                     </div>
@@ -187,17 +143,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
                                             <a href="#chat_sidebar" class="nav-link task-chat profile-rightbar float-right" id="task_chat"><i class="fa fa-user"></i></a>
                                         </li>
                                         <li class="nav-item">
-                                            <a class="nav-link" href="voice-call.php"><i class="fa fa-phone"></i></a>
-                                        </li>
-                                        <li class="nav-item">
                                             <a class="nav-link" href="video-call.php"><i class="fa fa-video-camera"></i></a>
-                                        </li>
-                                        <li class="nav-item dropdown dropdown-action">
-                                            <a href="" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="fa fa-cog"></i></a>
-                                            <div class="dropdown-menu dropdown-menu-right">
-                                                <a class="dropdown-item" href="javascript:void(0)">Delete Conversations</a>
-                                                <a class="dropdown-item" href="javascript:void(0)">Settings</a>
-                                            </div>
                                         </li>
                                     </ul>
                                 </div>
@@ -488,7 +434,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
                                                 <div class="chat chat-left">
                                                     <div class="chat-avatar">
                                                         <a href="profile.php" class="avatar">
-                                                            <img alt="Asad Bin Khalid" src="assets/img/doctor-thumb-03.jpg" class="img-fluid rounded-circle">
+                                                            <img alt="Asad Bin Khalid" src="assets/img//ResizedImages/Siraj.jpg" class="img-fluid rounded-circle">
                                                         </a>
                                                     </div>
                                                     <div class="chat-body">
@@ -499,7 +445,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
                                                                     <i class="material-icons">phone_missed</i>
                                                                     <div class="call-info">
                                                                         <div class="call-user-details">
-                                                                            <span class="call-description">Jeffrey Warden missed the call</span>
+                                                                            <span class="call-description">Siraj Munir missed the call</span>
                                                                         </div>
                                                                     </div>
                                                                 </div>
@@ -510,7 +456,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
                                                 <div class="chat chat-left">
                                                     <div class="chat-avatar">
                                                         <a href="profile.php" class="avatar">
-                                                            <img alt="Siraj Munir" src="assets/img/patient-thumb-02.jpg" class="img-fluid rounded-circle">
+                                                            <img alt="Siraj Munir" src="assets/img//ResizedImages/Siraj.jpg" class="img-fluid rounded-circle">
                                                         </a>
                                                     </div>
                                                     <div class="chat-body">
@@ -569,7 +515,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
                                                         </div>
                                                         <h3 class="user-name m-t-10 mb-0">Asad Bin Khalid</h3>
                                                         <small class="text-muted">Software Engineer</small>
-                                                        <a href="edit-profile.php" class="btn btn-primary edit-btn"><i class="fa fa-pencil"></i></a>
+                                                        <a href="#" class="btn btn-primary edit-btn"><i class="fa fa-pencil"></i></a>
                                                     </div>
                                                     <div class="chat-profile-info">
                                                         <ul class="user-det-list">
@@ -771,24 +717,26 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
                                     <li>
                                         <a href="#">
                                             <div class="media">
-												<span class="avatar align-self-center">J</span>
-                                            <div class="media-body align-self-center text-nowrap">
-                                                <div class="user-name">Jeffery Lalor</div>
-                                                <span class="designation">Team Leader</span>
-                                            </div>
-                                            <div class="text-nowrap align-self-center">
-                                                <div class="online-date">1 day ago</div>
-                                            </div>
+                                            <span class="avatar align-self-center">
+													<img src="assets/img/ResizedImages/Siraj.jpg" alt="Asim Farooq">
+												</span>
+												<div class="media-body align-self-center text-nowrap">
+													<div class="user-name">Siraj Munir</div>
+												</div>
+												<div class="text-nowrap align-self-center">
+													<div class="online-date">1 day ago</div>
+												</div>
                                             </div>
                                         </a>
                                     </li>
                                     <li>
                                         <a href="#">
                                             <div class="media ">
-												<span class="avatar align-self-center">B</span>
+                                            <span class="avatar align-self-center">
+													<img src="assets/img/ResizedImages/Anns.jpg" alt="Asim Farooq">
+												</span>
 												<div class="media-body align-self-center text-nowrap">
-													<div class="user-name">Bernardo Galaviz</div>
-													<span class="designation">Web Developer</span>
+													<div class="user-name">Anns Ali</div>
 												</div>
 												<div class="align-self-center text-nowrap">
 													<div class="online-date">3 days ago</div>
@@ -800,14 +748,13 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
                                         <a href="#">
                                             <div class="media">
 												<span class="avatar align-self-center">
-													<img src="assets/img/user.jpg" alt="John Doe">
+													<img src="assets/img/ResizedImages/Asim.jpg" alt="Asim Farooq">
 												</span>
 												<div class="media-body text-nowrap align-self-center">
-													<div class="user-name">John Doe</div>
-													<span class="designation">Web Designer</span>
+													<div class="user-name">Asim Farooq</div>
 												</div>
 												<div class="align-self-center text-nowrap">
-													<div class="online-date">7 months ago</div>
+													<div class="online-date">7 minutes ago</div>
 												</div>
                                             </div>
                                         </a>

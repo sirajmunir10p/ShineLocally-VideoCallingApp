@@ -36,7 +36,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
             <a id="mobile_btn" class="mobile_btn float-left" href="#sidebar"><i class="fa fa-bars"></i></a>
             <ul class="nav user-menu float-right">
                 <li class="nav-item dropdown d-none d-sm-block">
-                    <a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown"><i class="fa fa-bell-o"></i> <span class="badge badge-pill bg-danger float-right">3</span></a>
+                    <a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown"><i class="fa fa-bell-o"></i> <span class="badge badge-pill bg-danger float-right">1</span></a>
                     <div class="dropdown-menu notifications">
                         <div class="topnav-dropdown-header">
                             <span>Notifications</span>
@@ -50,13 +50,12 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
 												<img alt="John Doe" src="assets/img/user.jpg" class="img-fluid">
 											</span>
 											<div class="media-body">
-                                            <p class="noti-details"><span class="noti-title">You</span> missed a call from <span class="noti-title">Asim Farooq</span></p>
-											<p class="noti-time"><span class="notification-time">4 mins ago</span></p>
+												<p class="noti-details"><span class="noti-title">You</span> missed a call from <span class="noti-title">Asim Farooq</span></p>
+												<p class="noti-time"><span class="notification-time">4 mins ago</span></p>
 											</div>
                                         </div>
                                     </a>
                                 </li>
-                        
                             </ul>
                         </div>
                         <div class="topnav-dropdown-footer">
@@ -65,17 +64,19 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
                     </div>
                 </li>
                 <li class="nav-item dropdown d-none d-sm-block">
-                    <a href="javascript:void(0);" id="open_msg_box" class="hasnotifications nav-link"><i class="fa fa-comment-o"></i> <span class="badge badge-pill bg-danger float-right">8</span></a>
+                    <a href="javascript:void(0);" id="open_msg_box" class="hasnotifications nav-link"><i class="fa fa-comment-o"></i> <span class="badge badge-pill bg-danger float-right">0</span></a>
                 </li>
                 <li class="nav-item dropdown has-arrow">
                     <a href="#" class="dropdown-toggle nav-link user-link" data-toggle="dropdown">
-                        <span class="user-img"><img class="rounded-circle" src="assets/img/ResizedImages/Asad.jpg" width="40" alt="Admin">
-							<span class="status online"></span></span>
-                            <?php echo htmlspecialchars($_SESSION["username"]); ?>
+                        <span class="user-img">
+							<img class="rounded-circle" src="assets/img/user.jpg" width="24" alt="Admin">
+							<span class="status online"></span>
+						</span>
+                        <?php echo htmlspecialchars($_SESSION["username"]); ?>
                     </a>
 					<div class="dropdown-menu">
 						<a class="dropdown-item" href="profile.php">My Profile</a>
-						<a class="dropdown-item" href="login.php">Logout</a>
+						<a class="dropdown-item" href="logout.php">Logout</a>
 					</div>
                 </li>
             </ul>
@@ -102,6 +103,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
                         <li class="submenu">
                             <a href="#"><i class="fa fa-video-camera camera"></i> <span> Calls</span> <span class="menu-arrow"></span></a>
                             <ul style="display: none;">
+                            <li><a href="New-video-call.php">Start New Video Call</a></li>
                                 <li><a href="video-call.php">Video Call</a></li>
                             </ul>
                         </li>

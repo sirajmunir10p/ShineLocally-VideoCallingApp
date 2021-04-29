@@ -108,19 +108,6 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
                         <li>
                             <a href="index.php"><i class="fa fa-home back-icon"></i> <span>Back to Home</span></a>
                         </li>
-                        <li class="menu-title">Groups <a href="#" class="add-user-icon" data-toggle="modal" data-target="#add_chat_user"><i class="fa fa-plus"></i></a></li>
-                        <li>
-                            <a href="chat.php"><span class="chat-avatar-sm user-img"><img src="assets/img/user.jpg" alt="" class="rounded-circle"><span class="status online"></span></span> Asim, Siraj, You <span class="badge badge-pill bg-danger float-right">1</span></a>
-                        </li>
-                        <li>
-                            <a href="chat.php"><span class="chat-avatar-sm user-img"><img src="assets/img/user.jpg" alt="" class="rounded-circle"><span class="status offline"></span></span> Siraj, Anns, You <span class="badge badge-pill bg-danger float-right">18</span></a>
-                        </li>
-                        <li>
-                            <a href="chat.php"><span class="chat-avatar-sm user-img"><img src="assets/img/user.jpg" alt="" class="rounded-circle"><span class="status away"></span></span> Anns, Asim, Siraj, Out of Her Mind, You</a>
-                        </li>
-                        <li>
-                            <a href="chat.php"><span class="chat-avatar-sm user-img"><img src="assets/img/user.jpg" alt="" class="rounded-circle"><span class="status online"></span></span> Anns, Asim, You <span class="badge badge-pill bg-danger float-right">50</span></a>
-                        </li>
                     </ul>
                 </div>
             </div>
@@ -153,7 +140,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
                                  
                                     <div class="end-call">
                                         <a href="index.php">
-												Leave For All
+												End Call
 											</a>
                                     </div>
                                 </div>
