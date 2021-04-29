@@ -24,6 +24,7 @@
 		<script src="assets/js/html5shiv.min.js"></script>
 		<script src="assets/js/respond.min.js"></script>
 	<![endif]-->
+
 </head>
 
 <body>
@@ -115,7 +116,6 @@
             </div>
         </div>
         <div class="page-wrapper">
-
 				
 				<div class="row">
 					<div class="col-12 col-md-6 col-lg-8 col-xl-8">
@@ -128,8 +128,8 @@
 									<table class="table mb-0">
 										<thead class="d-none">
 											<tr>
-												<th>Patient Name</th>
-												<th>Doctor Name</th>
+												<th>User Name</th>
+												<th>Meeting Name</th>
 												<th>Timing</th>
 												<th class="text-right">Status</th>
 											</tr>

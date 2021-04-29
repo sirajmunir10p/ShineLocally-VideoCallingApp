@@ -24,6 +24,17 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
 		<script src="assets/js/html5shiv.min.js"></script>
 		<script src="assets/js/respond.min.js"></script>
 	<![endif]-->
+    <script src='https://8x8.vc/external_api.js' async></script>
+        <style>html, body, #jaas-container { height: 100%; }</style>
+        <script type="text/javascript">
+          window.onload = () => {
+            const api = new JitsiMeetExternalAPI("8x8.vc", {
+              roomName: "vpaas-magic-cookie-a314da0b95d54d0cb82db72c4da889ed/SampleAppProgressiveSaysAchieveIndeed",
+              parentNode: document.querySelector('#jaas-container'),
+              jwt: "eyJraWQiOiJ2cGFhcy1tYWdpYy1jb29raWUtYTMxNGRhMGI5NWQ1NGQwY2I4MmRiNzJjNGRhODg5ZWQvM2NkNDhiLVNBTVBMRV9BUFAiLCJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiJqaXRzaSIsImV4cCI6MTYxOTcwMjA2MiwibmJmIjoxNjE5Njk0ODU3LCJpc3MiOiJjaGF0Iiwicm9vbSI6IioiLCJzdWIiOiJ2cGFhcy1tYWdpYy1jb29raWUtYTMxNGRhMGI5NWQ1NGQwY2I4MmRiNzJjNGRhODg5ZWQiLCJjb250ZXh0Ijp7ImZlYXR1cmVzIjp7ImxpdmVzdHJlYW1pbmciOmZhbHNlLCJvdXRib3VuZC1jYWxsIjpmYWxzZSwidHJhbnNjcmlwdGlvbiI6ZmFsc2UsInJlY29yZGluZyI6ZmFsc2V9LCJ1c2VyIjp7Im1vZGVyYXRvciI6dHJ1ZSwibmFtZSI6IlRlc3QgVXNlciIsImlkIjoiZ29vZ2xlLW9hdXRoMnwxMDM0Mjk0ODYzMTc2MjY1NDI2ODYiLCJhdmF0YXIiOiIiLCJlbWFpbCI6InRlc3QudXNlckBjb21wYW55LmNvbSJ9fX0.NY7pWWG3caJA3MWTH3GwdxKy2WJzTKaTxHDX2LFMs31ZOE-W6MUQKWHr3--rxq5blSNy9cckpqFcpAaWv3qjkdVBvK5a17fGU9Pa7aHqUXh_Q7AQGY8LJeSw33yKe2NPz179C6OOxGOM7Y4D4GgeNlp90RpAQr672_h4CurV-rWoKVHRG1PYvcn7cxcERgRMccyyK6fDf6gVkDySgWmejX9jcYbFIh2T5IGRPeSiTQTdyEG3g1ZQn905teXhZXVPoEvF9LVtWIsjCKHlC9YK0MNpD99ky6X2XLP0jvLehz51C4rcC3q-LPCLx2A6cuCjEbdTKOgYhltZeTOaKLE-TQ"
+            });
+          }
+        </script>
 </head>
 
 <body>
@@ -145,7 +156,8 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
                             <div class="chat-contents">
                                 <div class="chat-content-wrap">
                                     <div class="user-video">
-                                            <img src="assets/img/ResizedImages/user.jpg" alt="">
+                                    <div id="jaas-container">
+                                    </div>
                                     </div>
                                     <div class="my-video">
                                         <ul>
@@ -160,29 +172,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
                             </div>
                             <div class="chat-footer">
                                 <div class="call-icons">
-                                    <span class="call-duration"></span>
-                                    <ul class="call-items">
-                                        <li class="call-item">
-                                            <a href="" title="Enable Video" data-placement="top" data-toggle="tooltip">
-                                                <i class="fa fa-video-camera camera"></i>
-                                            </a>
-                                        </li>
-                                        <li class="call-item">
-                                            <a href="" title="Mute Audio" data-placement="top" data-toggle="tooltip">
-                                                <i class="fa fa-microphone microphone"></i>
-                                            </a>
-                                        </li>
-                                        <li class="call-item">
-                                            <a href="" title="Add User" data-placement="top" data-toggle="tooltip">
-                                                <i class="fa fa-user-plus"></i>
-                                            </a>
-                                        </li>
-                                        <li class="call-item">
-                                            <a href="" title="Full Screen" data-placement="top" data-toggle="tooltip">
-                                                <i class="fa fa-arrows-v full-screen"></i>
-                                            </a>
-                                        </li>
-                                    </ul>
+                                 
                                     <div class="end-call">
                                         <a href="index.php">
 												End Call
