@@ -1,4 +1,4 @@
-﻿    <?php
+<?php
     // Initialize the session
     session_start();
     // Check if the user is logged in, if not then redirect him to login page
@@ -287,6 +287,7 @@
 												</td>
 												<td class="text-right">
 													<a href="New-video-call.php" class="btn btn-outline-primary take-btn">Start Meeting</a>
+			
 												</td>
 											</tr>
 										</tbody>

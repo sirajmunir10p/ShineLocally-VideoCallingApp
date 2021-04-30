@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 // Initialize the session
 session_start();
  
@@ -95,7 +95,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
     
-    <title>Preclinic - Medical & Hospital - Bootstrap 4 Admin Template</title>
+    <title>Shine Locally - Video Conferencing</title>
     <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="assets/css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">

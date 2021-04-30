@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 // Initialize the session
 session_start();
 // Check if the user is logged in, if not then redirect him to login page
@@ -24,17 +24,20 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
 		<script src="assets/js/html5shiv.min.js"></script>
 		<script src="assets/js/respond.min.js"></script>
 	<![endif]-->
-    <script src='https://8x8.vc/external_api.js' async></script>
+     <script src='https://meet.jit.si/external_api.js' async></script>
         <style>html, body, #jaas-container { height: 100%; }</style>
         <script type="text/javascript">
           window.onload = () => {
-            const api = new JitsiMeetExternalAPI("8x8.vc", {
-              roomName: "vpaas-magic-cookie-a314da0b95d54d0cb82db72c4da889ed/SampleAppWeeklyMistakesCrushLately",
-              parentNode: document.querySelector('#jaas-container'),
-              jwt: "eyJraWQiOiJ2cGFhcy1tYWdpYy1jb29raWUtYTMxNGRhMGI5NWQ1NGQwY2I4MmRiNzJjNGRhODg5ZWQvM2NkNDhiLVNBTVBMRV9BUFAiLCJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiJqaXRzaSIsImV4cCI6MTYxOTcxNTYzMiwibmJmIjoxNjE5NzA4NDI3LCJpc3MiOiJjaGF0Iiwicm9vbSI6IioiLCJzdWIiOiJ2cGFhcy1tYWdpYy1jb29raWUtYTMxNGRhMGI5NWQ1NGQwY2I4MmRiNzJjNGRhODg5ZWQiLCJjb250ZXh0Ijp7ImZlYXR1cmVzIjp7ImxpdmVzdHJlYW1pbmciOmZhbHNlLCJvdXRib3VuZC1jYWxsIjpmYWxzZSwidHJhbnNjcmlwdGlvbiI6ZmFsc2UsInJlY29yZGluZyI6ZmFsc2V9LCJ1c2VyIjp7Im1vZGVyYXRvciI6dHJ1ZSwibmFtZSI6IlRlc3QgVXNlciIsImlkIjoiZ29vZ2xlLW9hdXRoMnwxMDM0Mjk0ODYzMTc2MjY1NDI2ODYiLCJhdmF0YXIiOiIiLCJlbWFpbCI6InRlc3QudXNlckBjb21wYW55LmNvbSJ9fX0.NWwOvpdAuEKRbK0GoqW7ucHL42UdMoJquyMB4tupY1T0NH1tGz3fta9JR96ViS5ULKB4B1aWtCBGZbt80MzRNjs5RsEL4vUTcnHl3icCuWMHEdbwqpjP-HoGN39n8PilKA41dr3aiLP8_hGDCTzrul3Aien5XE1sHFbBpZCZHlv3EmHp2_2YoVYlbzOX0pReMHrbwknP5h-9CtwSBl0fqTe2Wpa0hFidw2FfSrgOrUAvk8bOqrk-SKJ02YrLRZqgDJ3ZQwgeJBw17w_Ezj6vtzDMEThl_MDXVTQ2e8-R3SjMv8SpW_-3rapXsz2JrXVys_n9msckG6yHNOrX3MhILw"
-            });
+        const domain = 'meet.jit.si';
+        const options = {
+    roomName: 'ShineLocallyMeeting',
+    parentNode: document.querySelector('#jaas-container'),
+    jwt: "eyJraWQiOiJ2cGFhcy1tYWdpYy1jb29raWUtYTMxNGRhMGI5NWQ1NGQwY2I4MmRiNzJjNGRhODg5ZWQvM2NkNDhiLVNBTVBMRV9BUFAiLCJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiJqaXRzaSIsImV4cCI6MTYxOTc3MjIzMywibmJmIjoxNjE5NzY1MDI4LCJpc3MiOiJjaGF0Iiwicm9vbSI6IioiLCJzdWIiOiJ2cGFhcy1tYWdpYy1jb29raWUtYTMxNGRhMGI5NWQ1NGQwY2I4MmRiNzJjNGRhODg5ZWQiLCJjb250ZXh0Ijp7ImZlYXR1cmVzIjp7ImxpdmVzdHJlYW1pbmciOmZhbHNlLCJvdXRib3VuZC1jYWxsIjpmYWxzZSwidHJhbnNjcmlwdGlvbiI6ZmFsc2UsInJlY29yZGluZyI6ZmFsc2V9LCJ1c2VyIjp7Im1vZGVyYXRvciI6dHJ1ZSwibmFtZSI6IlRlc3QgVXNlciIsImlkIjoiZ29vZ2xlLW9hdXRoMnwxMDM0Mjk0ODYzMTc2MjY1NDI2ODYiLCJhdmF0YXIiOiIiLCJlbWFpbCI6InRlc3QudXNlckBjb21wYW55LmNvbSJ9fX0.O_Va9TqKva8dU3h8hP4YTWKox6coxZdpJwx9Ltr07wmECMr7igY7WVMdn5OCVA0--gpyA0IlGVan4YGPvCjTupePCNh1AIN9PxC2LmtqQupXaHRl98buyYiO30UDc8EK-pnieUQeBveY5iF1nIt6DCNMVVRbfaefk830elaB3XRD9x4JniHJlYxZcZxbW1dk9Y6f7UjT2p1Uz3SEYL2pR86ZYOTR_XEWBPzBU9BW-A3s-u4m1xUF2gc8LOhstt38hLJT0hfiw47y_KI3-u3_2JT_vh1NkMlXseNK7StUigMr_4BcO8-hOdG_zDvHIs0MAV1huEoBO9jYrA0vHo1E1Q"
+};
+const api = new JitsiMeetExternalAPI(domain, options);
           }
         </script>
+
 </head>
 
 <body>
@@ -119,20 +122,8 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
                         <div class="chat-window">
                             
                             <div class="chat-contents">
-                                <div class="chat-content-wrap">
-                                    <div class="user-video">
-                                    <div id="jaas-container">
-                                    </div>
-                                    </div>
-                                    <div class="my-video">
-                                        <ul>
-                                            <li>
-                                                <video autoplay="true" id="videoElement2">
-                                            
-                                                </video>
-                                            </li>
-                                        </ul>
-                                    </div>
+                                <iframe src="https://meet.jit.si/ShineLocallyMeeting" allow="camera;microphone" width=100% height=100%></iframe>
+                                   
                                 </div>
                             </div>
                             <div class="chat-footer">
@@ -140,7 +131,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
                                  
                                     <div class="end-call">
                                         <a href="index.php">
-												End Call
+												Leave For All
 											</a>
                                     </div>
                                 </div>
